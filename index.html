@@ -20,15 +20,15 @@
       --bg-bottom: #dff2ff;
 
       --text: #000000;
-      --muted: #1e2d57;
-      --soft: #3c4f8f;
+      --muted: rgba(30, 45, 87, 0.88);
+      --soft: rgba(60, 79, 143, 0.76);
       --accent: #25408f;
 
-      --glass: rgba(255, 255, 255, 0.16);
-      --glass-strong: rgba(255, 255, 255, 0.84);
-      --border: rgba(37, 64, 143, 0.22);
-      --shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-      --title-bar: linear-gradient(90deg, #25408f 0%, #1d3270 100%);
+      --glass: rgba(255, 255, 255, 0.15);
+      --glass-strong: rgba(255, 255, 255, 0.78);
+      --border: rgba(37, 64, 143, 0.16);
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+      --title-bar: linear-gradient(90deg, rgba(37,64,143,0.92) 0%, rgba(29,50,112,0.9) 100%);
     }
 
     html, body {
@@ -181,15 +181,16 @@
       z-index: 10;
       width: 100vw;
       height: 100vh;
-      padding: 16px 18px 8px;
+      padding: 16px 18px 10px;
       display: grid;
       grid-template-rows:
         minmax(170px, 0.98fr)
         30px
         minmax(220px, 1.28fr)
+        6px
         30px
         minmax(260px, 1.42fr)
-        38px;
+        42px;
       gap: 8px;
     }
 
@@ -202,7 +203,7 @@
 
     .hero {
       background: var(--glass);
-      border: 2px solid rgba(37, 64, 143, 0.18);
+      border: 2px solid rgba(37, 64, 143, 0.14);
       border-radius: 24px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
@@ -227,7 +228,7 @@
       padding: 8px 14px;
       border-radius: 12px;
       margin-bottom: 10px;
-      box-shadow: 0 6px 18px rgba(37, 64, 143, 0.18);
+      box-shadow: 0 6px 18px rgba(37, 64, 143, 0.12);
     }
 
     .main-line {
@@ -242,13 +243,13 @@
       font-weight: 800;
       line-height: 0.9;
       color: var(--school-black);
-      text-shadow: 0 2px 0 rgba(255,255,255,0.25);
+      text-shadow: 0 2px 0 rgba(255,255,255,0.18);
     }
 
     .hero-icon {
       font-size: clamp(90px, 8vw, 134px);
       line-height: 1;
-      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.18));
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.16));
       flex: 0 0 auto;
     }
 
@@ -270,21 +271,21 @@
     .today-range {
       font-size: 22px;
       font-weight: 800;
-      color: var(--school-black);
+      color: rgba(0,0,0,0.88);
       line-height: 1;
     }
 
     .updated {
       font-size: 15px;
-      color: #2e437f;
-      font-weight: 600;
+      color: var(--soft);
+      font-weight: 700;
     }
 
     .side-card,
     .hour-card,
     .forecast-card {
       background: var(--glass-strong);
-      border: 2px solid rgba(37, 64, 143, 0.14);
+      border: 2px solid rgba(37, 64, 143, 0.10);
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
@@ -305,7 +306,7 @@
       gap: 12px;
       font-size: clamp(17px, 1.5vw, 22px);
       color: var(--muted);
-      border-bottom: 1px solid rgba(37, 64, 143, 0.14);
+      border-bottom: 1px solid rgba(37, 64, 143, 0.10);
       padding-bottom: 8px;
     }
 
@@ -315,7 +316,7 @@
     }
 
     .metric strong {
-      color: var(--school-black);
+      color: rgba(0,0,0,0.92);
       font-weight: 800;
     }
 
@@ -334,8 +335,7 @@
       border-radius: 10px;
       width: fit-content;
       min-width: 220px;
-      box-shadow: 0 6px 18px rgba(37, 64, 143, 0.15);
-      position: relative;
+      box-shadow: 0 6px 18px rgba(37, 64, 143, 0.10);
     }
 
     .section-title::before {
@@ -375,21 +375,36 @@
     .hour-icon {
       font-size: 88px;
       line-height: 1;
-      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.18));
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.16));
     }
 
     .hour-temp {
       font-size: 42px;
       font-weight: 800;
-      color: var(--school-black);
+      color: rgba(0,0,0,0.92);
       line-height: 1;
     }
 
     .hour-rain {
       font-size: 24px;
-      color: #2e437f;
+      color: var(--soft);
       line-height: 1;
       font-weight: 700;
+    }
+
+    .section-divider {
+      width: 100%;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(
+        90deg,
+        rgba(249,177,73,0.15) 0%,
+        rgba(249,177,73,0.95) 12%,
+        rgba(249,177,73,1) 50%,
+        rgba(249,177,73,0.95) 88%,
+        rgba(249,177,73,0.15) 100%
+      );
+      box-shadow: 0 0 14px rgba(249,177,73,0.22);
     }
 
     .forecast-row {
@@ -419,19 +434,19 @@
     .forecast-icon {
       font-size: 104px;
       line-height: 1;
-      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.18));
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.16));
     }
 
     .forecast-temps {
       font-size: 40px;
       font-weight: 800;
-      color: var(--school-black);
+      color: rgba(0,0,0,0.92);
       line-height: 1;
     }
 
     .forecast-desc {
       font-size: 24px;
-      color: #2e437f;
+      color: var(--soft);
       line-height: 1.05;
       font-weight: 700;
     }
@@ -440,10 +455,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 3px solid var(--school-gold);
       color: var(--muted);
       min-height: 0;
-      padding-top: 4px;
+      padding-top: 2px;
       gap: 16px;
     }
 
@@ -451,26 +465,30 @@
       font-size: 18px;
       font-weight: 800;
       color: var(--school-blue);
-      background: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.55);
       padding: 8px 14px;
       border-radius: 12px;
-      border: 2px solid rgba(37, 64, 143, 0.14);
+      border: 1px solid rgba(37, 64, 143, 0.10);
       white-space: nowrap;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
-    .datetime {
+    .time-only {
       display: flex;
       gap: 18px;
-      font-size: 22px;
+      font-size: 30px;
       font-weight: 800;
-      flex-wrap: wrap;
-      justify-content: flex-end;
       line-height: 1;
-      color: var(--school-black);
-      background: rgba(255,255,255,0.72);
-      padding: 8px 14px;
+      color: rgba(0,0,0,0.92);
+      background: rgba(255,255,255,0.55);
+      padding: 8px 16px;
       border-radius: 12px;
-      border: 2px solid rgba(37, 64, 143, 0.14);
+      border: 1px solid rgba(37, 64, 143, 0.10);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      min-width: 120px;
+      justify-content: center;
     }
 
     @keyframes drift1 {
@@ -562,15 +580,14 @@
     <div class="section-title">Next 8 Hours</div>
     <div class="hourly-row" id="hourlyRow"></div>
 
+    <div class="section-divider"></div>
+
     <div class="section-title">5 Day Forecast</div>
     <div class="forecast-row" id="forecastRow"></div>
 
     <div class="bottom-bar">
       <div class="updated-footer" id="updatedFooter">Updated --:--</div>
-      <div class="datetime">
-        <div id="date"></div>
-        <div id="time"></div>
-      </div>
+      <div class="time-only" id="time">--:--</div>
     </div>
   </div>
 
@@ -645,11 +662,6 @@
 
     function updateClock() {
       const now = new Date();
-      document.getElementById("date").textContent = now.toLocaleDateString("en-GB", {
-        weekday: "long",
-        day: "numeric",
-        month: "long"
-      });
       document.getElementById("time").textContent = now.toLocaleTimeString("en-GB", {
         hour: "2-digit",
         minute: "2-digit",
@@ -704,12 +716,12 @@
             "--bg-top": "#7fc8ff",
             "--bg-bottom": "#eef8ff",
             "--text": "#000000",
-            "--muted": "#1e2d57",
-            "--soft": "#3c4f8f",
+            "--muted": "rgba(30,45,87,0.88)",
+            "--soft": "rgba(60,79,143,0.76)",
             "--accent": "#25408f",
             "--glass": "rgba(255,255,255,0.16)",
-            "--glass-strong": "rgba(255,255,255,0.84)",
-            "--border": "rgba(37, 64, 143, 0.18)"
+            "--glass-strong": "rgba(255,255,255,0.78)",
+            "--border": "rgba(37, 64, 143, 0.16)"
           });
           showLayer("sunGlow", true);
         } else if (code === 1 || code === 2) {
@@ -717,12 +729,12 @@
             "--bg-top": "#95b9de",
             "--bg-bottom": "#eef4fa",
             "--text": "#000000",
-            "--muted": "#1e2d57",
-            "--soft": "#3c4f8f",
+            "--muted": "rgba(30,45,87,0.88)",
+            "--soft": "rgba(60,79,143,0.76)",
             "--accent": "#25408f",
             "--glass": "rgba(255,255,255,0.18)",
-            "--glass-strong": "rgba(255,255,255,0.84)",
-            "--border": "rgba(37, 64, 143, 0.18)"
+            "--glass-strong": "rgba(255,255,255,0.78)",
+            "--border": "rgba(37, 64, 143, 0.16)"
           });
           showLayer("sunGlow", code === 1);
           showLayer("clouds1", true);
@@ -732,12 +744,12 @@
             "--bg-top": "#adb9c8",
             "--bg-bottom": "#edf1f5",
             "--text": "#000000",
-            "--muted": "#1e2d57",
-            "--soft": "#3c4f8f",
+            "--muted": "rgba(30,45,87,0.88)",
+            "--soft": "rgba(60,79,143,0.76)",
             "--accent": "#25408f",
             "--glass": "rgba(255,255,255,0.18)",
-            "--glass-strong": "rgba(255,255,255,0.86)",
-            "--border": "rgba(37, 64, 143, 0.18)"
+            "--glass-strong": "rgba(255,255,255,0.80)",
+            "--border": "rgba(37, 64, 143, 0.16)"
           });
           showLayer("clouds1", true);
           showLayer("clouds2", true);
@@ -746,12 +758,12 @@
             "--bg-top": "#c2ccd3",
             "--bg-bottom": "#f3f6f8",
             "--text": "#000000",
-            "--muted": "#1e2d57",
-            "--soft": "#3c4f8f",
+            "--muted": "rgba(30,45,87,0.88)",
+            "--soft": "rgba(60,79,143,0.76)",
             "--accent": "#25408f",
             "--glass": "rgba(255,255,255,0.18)",
-            "--glass-strong": "rgba(255,255,255,0.88)",
-            "--border": "rgba(37, 64, 143, 0.16)"
+            "--glass-strong": "rgba(255,255,255,0.82)",
+            "--border": "rgba(37, 64, 143, 0.14)"
           });
           showLayer("mist", true);
         } else if ([51,53,55,61,63,65,80,81,82].includes(code)) {
@@ -759,12 +771,12 @@
             "--bg-top": "#7188a4",
             "--bg-bottom": "#dde5ec",
             "--text": "#000000",
-            "--muted": "#1e2d57",
-            "--soft": "#3c4f8f",
+            "--muted": "rgba(30,45,87,0.88)",
+            "--soft": "rgba(60,79,143,0.76)",
             "--accent": "#25408f",
             "--glass": "rgba(255,255,255,0.16)",
-            "--glass-strong": "rgba(255,255,255,0.84)",
-            "--border": "rgba(37, 64, 143, 0.18)"
+            "--glass-strong": "rgba(255,255,255,0.78)",
+            "--border": "rgba(37, 64, 143, 0.16)"
           });
           showLayer("clouds1", true);
           showLayer("clouds2", true);
@@ -774,12 +786,12 @@
             "--bg-top": "#d7e4ed",
             "--bg-bottom": "#f7fbfd",
             "--text": "#000000",
-            "--muted": "#1e2d57",
-            "--soft": "#3c4f8f",
+            "--muted": "rgba(30,45,87,0.88)",
+            "--soft": "rgba(60,79,143,0.76)",
             "--accent": "#25408f",
             "--glass": "rgba(255,255,255,0.18)",
-            "--glass-strong": "rgba(255,255,255,0.90)",
-            "--border": "rgba(37, 64, 143, 0.16)"
+            "--glass-strong": "rgba(255,255,255,0.84)",
+            "--border": "rgba(37, 64, 143, 0.14)"
           });
           showLayer("clouds1", true);
           showLayer("snowLayer", true);
@@ -788,12 +800,12 @@
             "--bg-top": "#506173",
             "--bg-bottom": "#d3dbe2",
             "--text": "#000000",
-            "--muted": "#1e2d57",
-            "--soft": "#3c4f8f",
+            "--muted": "rgba(30,45,87,0.88)",
+            "--soft": "rgba(60,79,143,0.76)",
             "--accent": "#25408f",
             "--glass": "rgba(255,255,255,0.16)",
-            "--glass-strong": "rgba(255,255,255,0.82)",
-            "--border": "rgba(37, 64, 143, 0.18)"
+            "--glass-strong": "rgba(255,255,255,0.76)",
+            "--border": "rgba(37, 64, 143, 0.16)"
           });
           showLayer("clouds1", true);
           showLayer("clouds2", true);
@@ -806,12 +818,12 @@
             "--bg-top": "#102043",
             "--bg-bottom": "#2a4388",
             "--text": "#ffffff",
-            "--muted": "#f0f4ff",
-            "--soft": "#f9b149",
+            "--muted": "rgba(240,244,255,0.92)",
+            "--soft": "rgba(249,177,73,0.86)",
             "--accent": "#f9b149",
             "--glass": "rgba(0,0,0,0.24)",
-            "--glass-strong": "rgba(14, 24, 52, 0.66)",
-            "--border": "rgba(249, 177, 73, 0.22)"
+            "--glass-strong": "rgba(14, 24, 52, 0.62)",
+            "--border": "rgba(249, 177, 73, 0.18)"
           });
           showLayer("moonGlow", true);
           showLayer("stars", true);
@@ -820,12 +832,12 @@
             "--bg-top": "#233251",
             "--bg-bottom": "#465c93",
             "--text": "#ffffff",
-            "--muted": "#eef3ff",
-            "--soft": "#f9b149",
+            "--muted": "rgba(240,244,255,0.92)",
+            "--soft": "rgba(249,177,73,0.86)",
             "--accent": "#f9b149",
             "--glass": "rgba(0,0,0,0.24)",
-            "--glass-strong": "rgba(18, 28, 56, 0.68)",
-            "--border": "rgba(249, 177, 73, 0.20)"
+            "--glass-strong": "rgba(18, 28, 56, 0.64)",
+            "--border": "rgba(249, 177, 73, 0.18)"
           });
           showLayer("moonGlow", true);
           showLayer("clouds1", true);
@@ -835,12 +847,12 @@
             "--bg-top": "#313a47",
             "--bg-bottom": "#667483",
             "--text": "#ffffff",
-            "--muted": "#eef3ff",
-            "--soft": "#f9b149",
+            "--muted": "rgba(240,244,255,0.92)",
+            "--soft": "rgba(249,177,73,0.86)",
             "--accent": "#f9b149",
             "--glass": "rgba(0,0,0,0.26)",
-            "--glass-strong": "rgba(24, 30, 42, 0.70)",
-            "--border": "rgba(249, 177, 73, 0.18)"
+            "--glass-strong": "rgba(24, 30, 42, 0.66)",
+            "--border": "rgba(249, 177, 73, 0.16)"
           });
           showLayer("mist", true);
         } else if ([51,53,55,61,63,65,80,81,82].includes(code)) {
@@ -848,12 +860,12 @@
             "--bg-top": "#1d2e46",
             "--bg-bottom": "#53637f",
             "--text": "#ffffff",
-            "--muted": "#eef3ff",
-            "--soft": "#f9b149",
+            "--muted": "rgba(240,244,255,0.92)",
+            "--soft": "rgba(249,177,73,0.86)",
             "--accent": "#f9b149",
             "--glass": "rgba(0,0,0,0.26)",
-            "--glass-strong": "rgba(19, 29, 49, 0.70)",
-            "--border": "rgba(249, 177, 73, 0.20)"
+            "--glass-strong": "rgba(19, 29, 49, 0.66)",
+            "--border": "rgba(249, 177, 73, 0.18)"
           });
           showLayer("clouds1", true);
           showLayer("clouds2", true);
@@ -863,12 +875,12 @@
             "--bg-top": "#324354",
             "--bg-bottom": "#7a8c9e",
             "--text": "#ffffff",
-            "--muted": "#eef3ff",
-            "--soft": "#f9b149",
+            "--muted": "rgba(240,244,255,0.92)",
+            "--soft": "rgba(249,177,73,0.86)",
             "--accent": "#f9b149",
             "--glass": "rgba(0,0,0,0.22)",
-            "--glass-strong": "rgba(34, 46, 60, 0.70)",
-            "--border": "rgba(249, 177, 73, 0.18)"
+            "--glass-strong": "rgba(34, 46, 60, 0.66)",
+            "--border": "rgba(249, 177, 73, 0.16)"
           });
           showLayer("clouds1", true);
           showLayer("snowLayer", true);
@@ -877,12 +889,12 @@
             "--bg-top": "#171d29",
             "--bg-bottom": "#425063",
             "--text": "#ffffff",
-            "--muted": "#eef3ff",
-            "--soft": "#f9b149",
+            "--muted": "rgba(240,244,255,0.92)",
+            "--soft": "rgba(249,177,73,0.86)",
             "--accent": "#f9b149",
             "--glass": "rgba(0,0,0,0.28)",
-            "--glass-strong": "rgba(18, 24, 36, 0.72)",
-            "--border": "rgba(249, 177, 73, 0.18)"
+            "--glass-strong": "rgba(18, 24, 36, 0.68)",
+            "--border": "rgba(249, 177, 73, 0.16)"
           });
           showLayer("clouds1", true);
           showLayer("clouds2", true);
