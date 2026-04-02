@@ -184,11 +184,11 @@
       padding: 18px 22px 10px;
       display: grid;
       grid-template-rows:
+        minmax(180px, 1fr)
+        26px
         minmax(180px, 1.15fr)
         26px
-        minmax(120px, 0.9fr)
-        26px
-        minmax(135px, 0.95fr)
+        minmax(220px, 1.2fr)
         42px;
       gap: 8px;
     }
@@ -334,13 +334,13 @@
     .hourly-row {
       display: grid;
       grid-template-columns: repeat(8, minmax(0, 1fr));
-      gap: 8px;
+      gap: 12px;
       min-height: 0;
     }
 
     .hour-card {
-      border-radius: 16px;
-      padding: 10px 6px 8px;
+      border-radius: 18px;
+      padding: 14px 8px 12px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -349,44 +349,46 @@
     }
 
     .hour-time {
-      font-size: 15px;
+      font-size: 24px;
       font-weight: 800;
       color: var(--school-blue);
-      margin-bottom: 6px;
+      margin-bottom: 10px;
+      line-height: 1;
     }
 
     .hour-icon {
-      font-size: 42px;
+      font-size: 72px;
       line-height: 1;
-      margin-bottom: 6px;
-      filter: drop-shadow(0 3px 8px rgba(0,0,0,0.15));
+      margin-bottom: 10px;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.18));
       flex: 0 0 auto;
     }
 
     .hour-temp {
-      font-size: 20px;
+      font-size: 34px;
       font-weight: 800;
       color: var(--school-black);
-      margin-bottom: 4px;
+      margin-bottom: 8px;
+      line-height: 1;
     }
 
     .hour-rain {
-      font-size: 13px;
+      font-size: 20px;
       color: #2e437f;
       line-height: 1.1;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .forecast-row {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 10px;
+      gap: 14px;
       min-height: 0;
     }
 
     .forecast-card {
-      border-radius: 18px;
-      padding: 12px 8px 10px;
+      border-radius: 20px;
+      padding: 16px 10px 14px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -395,33 +397,35 @@
     }
 
     .forecast-day {
-      font-size: 18px;
+      font-size: 28px;
       font-weight: 800;
       color: var(--school-blue);
-      margin-bottom: 6px;
+      margin-bottom: 10px;
+      line-height: 1;
     }
 
     .forecast-icon {
-      font-size: 50px;
-      margin-bottom: 6px;
+      font-size: 82px;
+      margin-bottom: 10px;
       line-height: 1;
-      filter: drop-shadow(0 3px 8px rgba(0,0,0,0.15));
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.18));
       flex: 0 0 auto;
     }
 
     .forecast-temps {
-      font-size: 21px;
+      font-size: 34px;
       font-weight: 800;
       color: var(--school-black);
-      margin-bottom: 4px;
+      margin-bottom: 8px;
+      line-height: 1;
     }
 
     .forecast-desc {
-      font-size: 14px;
+      font-size: 20px;
       color: #2e437f;
       line-height: 1.15;
-      min-height: 30px;
-      font-weight: 600;
+      min-height: 44px;
+      font-weight: 700;
     }
 
     .bottom-bar {
